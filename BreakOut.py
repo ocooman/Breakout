@@ -26,7 +26,7 @@ class Paddle(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.centerx = WIDTH // 2
         self.rect.bottom = HEIGHT - 10
-        self.speed = 5
+        self.speed = 10
 
     def update(self):
         keys = pygame.key.get_pressed()
