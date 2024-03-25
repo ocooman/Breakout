@@ -1,34 +1,30 @@
 import unittest
+import subprocess
 import time
-from BreakOut import Paddle, Ball, Brick
 
-class TestBreakoutGame(unittest.TestCase):
-    def setUp(self):
-        pygame.init()
-        self.screen = pygame.display.set_mode((800, 600))
-        pygame.display.set_caption("Breakout")
-        self.clock = pygame.time.Clock()
-
-        self.paddle = Paddle()
-        self.ball = Ball()
-        self.brick = Brick(0, 0)
-
-    def test_paddle_movement(self):
+class TestApplicationStartup(unittest.TestCase):
+    def test_application_start(self):
         timeout_seconds = 10  # Timeout duration in seconds
         start_time = time.time()
+        
+        # Replace 'python my_application.py' with the actual command to start your application
+        process = subprocess.Popen(['python', 'my_application.py'], stderr=subprocess.PIPE)
+        
         while time.time() - start_time < timeout_seconds:
-            # Run the paddle movement test here
-            initial_x = self.paddle.rect.x
-            self.paddle.update()
-            if initial_x != self.paddle.rect.x:
-                break  # Exit loop if paddle movement detected
+            if process.poll() is not None:
+                # Application process has completed
+                returncode = process.returncode
+                if returncode == 0:
+                    # Application started successfully
+                    return
+                else:
+                    # Application encountered an error
+                    self.fail(f'Application exited with error code {returncode}')
+            time.sleep(1)  # Wait for 1 second before checking again
 
-        # Add cleanup code to handle timeout
-        self.addCleanup(self.handle_timeout)
-
-    def handle_timeout(self):
-        # This method will be called if the test times out (no movement detected within 10 seconds)
-        self.assertTrue(False, msg='Test timed out without movement')
+        # Timeout reached, terminate the process and fail the test
+        process.terminate()
+        self.fail('Application startup timed out')
 
 if __name__ == '__main__':
     unittest.main()
