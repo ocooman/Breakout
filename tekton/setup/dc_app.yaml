@@ -1,0 +1,28 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  name: my-python-app-deployment
+spec:
+  replicas: 1
+  selector:
+    app: my-python-app
+  template:
+    metadata:
+      labels:
+        app: my-python-app
+    spec:
+      containers:
+        - name: app
+          image: my-python-app:latest
+          ports:
+            - containerPort: 5000
+  triggers:
+    - type: ConfigChange
+    - imageChangeParams:
+        automatic: true
+        containerNames:
+          - app
+        from:
+          kind: ImageStreamTag
+          name: my-python-app:latest
+      type: ImageChange

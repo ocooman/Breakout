@@ -1,0 +1,12 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: my-python-app-route
+spec:
+  to:
+    kind: Service
+    name: my-python-app-service
+  port:
+    targetPort: 5000
+  tls:
+    termination: edge
