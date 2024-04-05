@@ -4,7 +4,7 @@ metadata:
   name: hello
 spec:
   steps:
-    - name: echo
+    - name: say-hello
       image: docker/whalesay 
       script: |
         #!/usr/bin/env sh
