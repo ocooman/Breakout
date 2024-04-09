@@ -74,3 +74,33 @@
 - Controleer of je geforkte repo op public staat.
 - Zorg dat de URL in de TaskRun naar jouw fork repo en juiste revision (branch) verwijst.
 - De workspace in de TaskRun wordt net zo geconfigureerd als in deel 6. 
+
+# Deel 8 - Python test - Pipeline - PVC:
+- Maak een Task “python-test” aan. Deze bestaat uit 3 steps, die allemaal gebruik maken van het image  “python:3.9”: 
+- Step 1 “create venv”: 
+###	    #!/usr/bin/env bash
+###	    cd $(workspaces.source-code.path)/Breakout/python-app
+###     ls -la
+###    	python -m venv $PWD/venv
+- Step 2 “install dependencies”:
+###		#!/usr/bin/env bash
+###     cd $(workspaces.source-code.path)/Breakout/python-app
+###     ls -la
+###     source $PWD/venv/bin/activate
+###     pip install -r requirements.txt
+- Step 3 “run-tests”:
+###		#!/usr/bin/env bash
+###     cd $(workspaces.source-code.path)/Breakout/python-app
+###     source $PWD/venv/bin/activate
+###     python -m unittest test_app.py
+- Maak een PersistentVolumeClaim aan (zie GitHub deel 8)
+- Maak een Pipeline en PipelineRun aan die de volgende 2 Tasks uitvoert:
+- Clonen van de repo
+- Uitvoeren van de python test
+- Als Workspace gebruik je nu de PVC die je in de stap hiervoor hebt aangemaakt. In de PipelineRun kun je deze gebruiken met de volgende configuratie:
+###		spec:
+###		  …..
+###  	  workspaces:
+###    	    - name: (naam van je workspace)
+###      	  persistentVolumeClaim:
+###        	    claimName: (naam van je PVC)
