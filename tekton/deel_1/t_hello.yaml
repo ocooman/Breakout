@@ -8,4 +8,4 @@ spec:
       image: docker/whalesay 
       script: |
         #!/usr/bin/env sh
-        cowsay "Hello World"
+        cowsay "Goodbye $(params.goodbye)"
