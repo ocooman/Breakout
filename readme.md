@@ -64,7 +64,7 @@
 ####                        storage: 128Mi
 
 # Deel 7 - Repo clonen:
-- Maak een Task “git-clone” en TaskRun aan. Het image dat we gebruiken is “alpine/git” Deze bevat het volgende script: 
+- Maak een Task “git-clone” en TaskRun aan. Het image dat we gebruiken is “alpine/git”. Deze Task bevat het volgende script: 
 ###      #!/usr/bin/env sh
 ###      cd $(workspaces.source-code.path)
 ###      git clone $(params.url)
