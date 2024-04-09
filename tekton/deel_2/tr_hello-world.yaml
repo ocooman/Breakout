@@ -1,0 +1,10 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  generateName: hello-world-task-run-
+spec:
+  taskRef:
+    name: hello-world
+  params:
+  - name: message
+    value: "Hello World"
