@@ -104,3 +104,8 @@
 ###    	    - name: (naam van je workspace)
 ###      	  persistentVolumeClaim:
 ###        	    claimName: (naam van je PVC)
+
+# Deel 9 - Build aftrappen:
+- Maak een Task en TaskRun aan die de BuildConfig (van de setup) aftrappen. 
+- Het image dat we gebruiken in deze Task is: 'quay.io/openshift/origin-cli:latest'
+- Het commando dat je hiervoor gebruikt in het script is: “oc start-build ${params.buildconfig-name} -n (naam van je namespace)
