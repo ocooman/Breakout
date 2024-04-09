@@ -15,3 +15,8 @@
     - Hiervoor is Developer account voor OpenShift nodig, maak deze aan indien je deze nog niet hebt
 - Maak een Sandbox aan
 - Login via je CLI 
+
+# Deel 1 - voorbeeld Task: 
+-  Zorg dat de GitOps Pipeline operator geïnstalleerd is (als deze niet geinstalleerd is)
+- Maak de hello-task aan uit deel 1. Bekijk goed de configuratie van deze Task. Het is de bedoeling dat je deze straks zelf kan maken.
+- Creëer de TaskRun uit deel 1 en zie het resultaat in OpenShift. Bekijk goed de configuratie van deze Taskrun. Het is de bedoeling dat je deze straks zelf kan maken.
