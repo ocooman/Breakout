@@ -34,7 +34,7 @@
 # Deel 4 - Bericht schrijven - Workspace:
 - Maak een Task “write-message” en TaskRun aan die een bericht “Hello World” schrijft naar een workspace (emptyDir). Gebruik in de Task het volgende script: 
 
-#	#!/usr/bin/env sh
-#    cowsay $(params.message) > $(workspaces.messages.path)/message
-#    echo "file written to $(workspaces.messages.path)"
-#    ls -la $(workspaces.messages.path)
+###	#!/usr/bin/env sh
+###    cowsay $(params.message) > $(workspaces.messages.path)/message
+###    echo "file written to $(workspaces.messages.path)"
+###    ls -la $(workspaces.messages.path)
