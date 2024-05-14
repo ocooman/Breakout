@@ -96,3 +96,8 @@
 - Maak een Pipeline en PipelineRun aan die de volgende 2 Tasks uitvoert:
 - Clonen van de repo
 - Uitvoeren van de python test
+
+# Deel 9 - Build aftrappen:
+- Maak een Task en TaskRun aan die de BuildConfig (van de setup) aftrappen. 
+- Het image dat we gebruiken in deze Task is: 'quay.io/openshift/origin-cli:latest'
+- Het commando dat je hiervoor gebruikt in het script is: “oc start-build ${params.buildconfig-name} -n (naam van je namespace)
