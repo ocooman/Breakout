@@ -38,3 +38,9 @@
 ###    cowsay $(params.message) > $(workspaces.messages.path)/message
 ###    echo "file written to $(workspaces.messages.path)"
 ###    ls -la $(workspaces.messages.path)
+
+# Deel 5 - Bericht lezen - Workspace: 
+- Maak een nieuwe Task en TaskRun aan. Deze Task zal 2 ‘steps’ bevatten:
+- Voor de eerste step gebruiken we het write-message script van deel 4. 
+- Maak een tweede step die het bericht van step 1 uitleest en print in de logs. 
+- Gebruik als image ‘alpine’
