@@ -1,0 +1,16 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: test-pipeline-run-
+spec:
+  pipelineRef:
+    name: test-pipeline
+  workspaces:
+    - name: shared-workspace
+      persistentVolumeClaim:
+        claimName: shared-workspace-pvc
+  params:
+    - name: repo-url
+      value: https://github.com/jo8s/Breakout
+    - name: revision
+      value: main
