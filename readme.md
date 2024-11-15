@@ -29,3 +29,11 @@
 - Maak een Pipeline en PipelineRun aan met daarin 2 Tasks
 - de eerste Task voert de hello-Task uit van opdracht 1
 - de tweede Task voert de goodbye-Task met parameter uit van opdracht 2. 
+
+# Deel 4 - Bericht schrijven - Workspace:
+- Maak een Task “write-message” en TaskRun aan die een bericht “Hello World” schrijft naar een workspace (emptyDir). Gebruik in de Task het volgende script: 
+
+###	#!/usr/bin/env sh
+###    cowsay $(params.message) > $(workspaces.messages.path)/message
+###    echo "file written to $(workspaces.messages.path)"
+###    ls -la $(workspaces.messages.path)
