@@ -19,3 +19,8 @@
 -  Zorg dat de Red Hat Openshift Pipelines operator geïnstalleerd is (als deze niet geïnstalleerd is).
 - Maak de hello-task aan uit deel 1. Bekijk goed de configuratie van deze Task. Het is de bedoeling dat je deze straks zelf kan maken.
 - Creëer de TaskRun uit deel 1 en zie het resultaat in OpenShift. Bekijk goed de configuratie van deze Taskrun. Het is de bedoeling dat je deze straks zelf kan maken.
+
+# Deel 2 - Gebruik parameter: 
+- Open de volgende website: https://tekton.dev/docs/pipelines/ . Deze documentatie kun je gebruiken als hulpmiddel bij alle opdrachten. 
+- Maak een nieuwe Task "goodbye" en bijbehorende TaskRun aan waarbij de Walvis zegt “Goodbye Jenkins”. 
+- Vervang "Jenkins" voor een parameter field. (tip: zie documentatie https://tekton.dev/docs/pipelines/taskruns/#specifying-parameters).
