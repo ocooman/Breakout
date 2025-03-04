@@ -24,3 +24,8 @@
 - Open de volgende website: https://tekton.dev/docs/pipelines/ . Deze documentatie kun je gebruiken als hulpmiddel bij alle opdrachten. 
 - Maak een nieuwe Task "goodbye" en bijbehorende TaskRun aan waarbij de Walvis zegt “Goodbye Jenkins”. 
 - Vervang "Jenkins" voor een parameter field. (tip: zie documentatie https://tekton.dev/docs/pipelines/taskruns/#specifying-parameters).
+
+# Deel 3 - Pipelines:
+- Maak een Pipeline en PipelineRun aan met daarin 2 Tasks
+- de eerste Task voert de hello-Task uit van opdracht 1
+- de tweede Task voert de goodbye-Task met parameter uit van opdracht 2. 
